@@ -128,12 +128,11 @@ Two Mini App funnels sharing one backend, plus an iOS companion app and an admin
 
 ---
 
-<div align="center">
+## Now
 
-<img height="150" src="https://github-readme-stats.vercel.app/api?username=user1618phi&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=default" alt="GitHub stats">
-<img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=user1618phi&layout=compact&hide_border=true&theme=default" alt="Top languages">
-
-</div>
+- 🛠 Building **Vita Lux** and the **OI BOI** platform
+- 📚 Studying — and treating every client project as the real curriculum
+- ✍️ Setting up a blog about shipping products as a student
 
 ---
 

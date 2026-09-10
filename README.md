@@ -2,58 +2,92 @@
 
 <p align="center">
   <b>Student who ships.</b><br>
-  I build products end-to-end — ML models, web apps, Telegram bots, iOS — and I'm starting to write about how.
+  I build products end-to-end: LLM systems, ML models, web apps, Telegram bots, native iOS and Android.
 </p>
 
 <p align="center">
   <a href="mailto:kassymoff01@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
-  <img src="https://img.shields.io/badge/Kazakhstan-00AFCA?style=flat-square&logo=googlemaps&logoColor=white" alt="Kazakhstan">
+  <img src="https://img.shields.io/badge/Astana,_Kazakhstan-00AFCA?style=flat-square&logo=googlemaps&logoColor=white" alt="Kazakhstan">
 </p>
 
 ---
 
 ## About
 
-- 🎓 Still a student — and shipping real products alongside coursework
-- 🤖 Into **AI/ML and data**: ranking models, explainability, LLM-powered products
-- 🚀 Into **shipping**: idea → live product → first real users, as fast as it takes
-- 🛠 Into **building with AI agents** — most of my work now runs through Claude Code and custom skills
-- ✍️ Writing about the **student-founder path**: hackathons, clients, mistakes, and juggling it with a degree
+- 🎓 Student at QAIRU, Astana. CTO of **QairuHub**, the student builders' organization: four product tracks, fifteen people, most of them on their first project
+- 🤖 **LLM and ML products**: retrieval with guarantees about what the model may not invent, explainable scoring, cost-aware AI in production
+- 🚀 **Shipping**: idea → live product → first paying users. Solo, end to end, including the App Store
+- 🛠 **Building with AI agents**: Claude Code and Codex are my daily tools, and every repo carries the rules they work by
+- 🏆 1st place, nFactorial LLM Hackathon 2024 · nFactorial Incubator 2024 (full scholarship)
 
 ---
 
 ## Featured projects
 
+### 🧠 [The Persona Factory](https://github.com/user1618phi/persona-factory) — an LLM editor that refuses to invent
+
+A private Telegram editor that writes in one person's voice from **confirmed rules, real voice samples and verified experiences**, and nothing else. Books are knowledge, never identity. Chat exports are language samples, never biography. New facts enter only through a human `/review`.
+
+- LiteLLM fallback chain (Gemini → Groq → Cohere → OpenRouter), Groq Whisper for voice notes
+- Supabase pgvector retrieval reranked by recency: `similarity × exp(−λ · age)`
+- Semantic chunking of books and chat exports, separate slim production image and heavy ingest image
+- 116 tests with every network call mocked, SQL migrations validated with pglast
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase_pgvector-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
+![LiteLLM](https://img.shields.io/badge/LiteLLM-1C3C3C?style=flat-square)
+![Telegram](https://img.shields.io/badge/aiogram-26A5E4?style=flat-square&logo=telegram&logoColor=white)
+
+---
+
+### 🚿 [TazaCRM](https://github.com/user1618phi/tazacrm) — management accounting for car washes
+
+The competitor is a paper notebook: 8 seconds per entry, in a concrete box with no stable Wi-Fi. TazaCRM does intake in **15 seconds**, payroll by percentage, month close, cash reconciliation and a morning Telegram summary. Web app plus native **iOS and Android** clients on one OpenAPI 3.1 contract. In production; iOS in App Store review. Code is private, the case study is public.
+
+- Real row-level security per tenant (32 policies in the Drizzle schema), audit log by Postgres triggers
+- Offline-first: one write path through an IndexedDB queue, five cars in airplane mode is an acceptance test
+- AI intake as a cascade: on-device speech → deterministic parser with tests → Claude only as fallback, per-tenant daily budget
+- 22 numbered architecture decisions; code that contradicts one is not written
+
+![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square)
+![Swift](https://img.shields.io/badge/SwiftUI-F05138?style=flat-square&logo=swift&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Compose-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+
+---
+
 ### 🌾 [Dala.ai](https://github.com/user1618phi/dala-ai) — merit-based AI scoring for farm subsidies
 
-> 🏆 Built for **Decentrathon 5.0** (Gov Case 2) — hackathon project, documented as a full case study
+> 🏆 Decentrathon 5.0, Gov Case 2. 135 commits in nine days, documented as a full case study.
 
-Kazakhstan distributes **139.3 bn ₸** of farm subsidies across **36,651 applications** a year, prioritized by a single criterion: *who clicked submit first*. A farm with 500 head of pedigree cattle can lose to a shell cooperative that applied five minutes earlier. Dala.ai replaces the queue with a merit-based score.
+Kazakhstan distributes **139.3 bn ₸** of farm subsidies across **36,651 applications** a year, prioritized by who clicked submit first. Dala.ai replaces the queue with an explainable merit score.
 
-- LightGBM ranking model with **SHAP explanations** and a fairness audit across regions
-- FastAPI backend · Next.js app with farmer/official roles · Streamlit analytics dashboard
-- Model card, BPMN as-is/to-be and full methodology in the repo — data anonymized, no names or national IDs
+- LightGBM tuned with Optuna, **SHAP** explanations for every score, a fairness audit across regions
+- **RAG over the subsidy regulation** (ChromaDB + lexical) with separate prompts for farmers and officials
+- Antifraud flags override the model; per-oblast pasture norms extracted from the government PDF
+- FastAPI · Next.js app with farmer/official roles · Streamlit dashboard · model card · CI
 
 **→ [Live analytics dashboard](https://frontend-production-3c07.up.railway.app)**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=flat-square)
 ![SHAP](https://img.shields.io/badge/SHAP-FF6F00?style=flat-square)
+![ChromaDB](https://img.shields.io/badge/ChromaDB_RAG-FF6B35?style=flat-square)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 
 ---
 
 ### 📿 [Asma: 99 Names](https://github.com/user1618phi/asma-99-ios-app) — iOS app for learning the 99 Names of Allah
 
-Free, offline-first, no account. Russian, English and Kazakh — interface and content.
+Free, offline-first, no account. Russian, English and Kazakh, interface and content. Shipped to the App Store in May 2026.
 
-Most memorization apps let you mark a card "known" by looking at it. This one doesn't: flashcards only prepare a name, and it counts as learned once you retrieve it correctly under test. The engine is built on the **testing effect** (Roediger & Karpicke, 2006), the **spacing effect** (Cepeda et al., 2006) and **Fogg's behavior model** — every threshold in the code traces back to one of them.
+Flashcards only prepare a name; it counts as learned once you retrieve it correctly under test. The engine is built on the testing effect, the spacing effect and Fogg's behavior model, and [every threshold is documented](https://github.com/user1618phi/asma-99-ios-app/blob/main/docs/learning-engine.md).
 
 - On-device speech recognition for pronunciation practice
 - Gamification that never punishes: soft currency and cooldowns instead of streak guilt
-- Optional CloudKit sync across devices, with no login
-- [Learning engine fully documented](https://github.com/user1618phi/asma-99-ios-app/blob/main/docs/learning-engine.md) — state machine, HP economy, cooldowns
+- Optional CloudKit sync with no login
 
 ![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-0071E3?style=flat-square&logo=swift&logoColor=white)
@@ -62,43 +96,27 @@ Most memorization apps let you mark a card "known" by looking at it. This one do
 
 ---
 
-### 🛁 [Vita Lux](https://github.com/user1618phi/vita-lux) — e-commerce for a manufacturer
+## Also public
 
-Online store for a Kazakh sanitary-ware manufacturer. Runs on a mock catalog when no database is present, which keeps CI green and onboarding to a single command.
+- 🛁 [**Vita Lux**](https://github.com/user1618phi/vita-lux) — e-commerce for a sanitary-ware manufacturer. pnpm monorepo, Drizzle, ru/kk localization with a linter for the nine Kazakh-only glyphs (ә ө ұ ү қ ң ғ һ і), so a translation can never silently degrade into Russian. CI on every push.
+- 🌱 [**Sarqyt**](https://github.com/user1618phi/sarqyt_web) — marketplace that rescues surplus food from restaurants. Next.js, kk/ru.
 
-![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript_strict-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-
-### 🌱 [Sarqyt](https://github.com/user1618phi/sarqyt_web) — rescuing surplus food
-
-Marketplace connecting restaurants with people willing to buy good food that would otherwise be thrown out. Kazakh/Russian localization, mobile-first.
-
-![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
-
----
-
-## Client work
-
-Code stays private — these are products built for companies. Here's what they do.
+## Client work (code stays private)
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 📦 Smart Procurement / P23
+### 📦 Smart Procurement
 **RFQ → suppliers → delivery, end to end**
 
-Upload an RFQ as Excel or CSV; the system finds suppliers, scores them, extracts contacts, then carries the order through quoting, invoicing, customs breakdown and delivery tracking.
+Upload an RFQ as Excel or CSV; the system finds suppliers, classifies items with Claude Haiku behind a two-level cache, extracts and validates contacts, then carries the order through quoting, invoicing, customs and cargo tracking.
 
-- Supplier discovery with **deterministic rule-based scoring** — no LLM in the ranking path, so results stay reproducible and auditable
-- Multi-tenant isolation · SSE live progress
-- ~850 commits across frontend, API and search engine
+- Deterministic rule-based supplier scoring, so results stay reproducible and auditable
+- Tiered scraping cascade: plain HTTP first, headless browser only for JS-rendered sites
+- ~850 commits across frontend, API and search engine over 18 months
 
-`Next.js` `TypeScript` `FastAPI` `PostgreSQL`
+`FastAPI` `PostgreSQL` `Next.js` `Playwright` `Anthropic`
 
 </td>
 <td width="50%" valign="top">
@@ -106,12 +124,12 @@ Upload an RFQ as Excel or CSV; the system finds suppliers, scores them, extracts
 ### 🏋️ OI BOI
 **Fitness platform living inside Telegram**
 
-Two Mini App funnels sharing one backend, plus an iOS companion app and an admin panel.
+Two Mini App funnels sharing one backend, plus a native iOS app and an admin panel. Three paid products with real subscriptions and entitlements.
 
-- **Visual bot builder**: paste a token from @BotFather, draw the scenario on a React Flow canvas, and users walk through it automatically
+- **Visual bot builder**: paste a token from @BotFather, draw the scenario on a React Flow canvas, users walk through it automatically
 - ~530 commits across backend, two Mini Apps, studio, admin and iOS
 
-`Next.js` `Prisma` `Supabase` `Telegram Bot API` `Swift`
+`Next.js` `Prisma` `Supabase` `Telegram Bot API` `Swift` `StoreKit`
 
 </td>
 </tr>
@@ -121,36 +139,55 @@ Two Mini App funnels sharing one backend, plus an iOS companion app and an admin
 
 ## Stack
 
+**LLM & retrieval**
+![Anthropic](https://img.shields.io/badge/Anthropic-191919?style=flat-square&logo=anthropic&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=flat-square&logo=google&logoColor=white)
+![LiteLLM](https://img.shields.io/badge/LiteLLM-1C3C3C?style=flat-square)
+![pgvector](https://img.shields.io/badge/pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square)
+![Whisper](https://img.shields.io/badge/Whisper-412991?style=flat-square&logo=openai&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+
+**ML & data**
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=flat-square)
+![SHAP](https://img.shields.io/badge/SHAP-FF6F00?style=flat-square)
+![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+
+**Backend**
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
+![Drizzle](https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
+
 **Web**
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
-**Backend & data**
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
-
-**ML**
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
-![LightGBM](https://img.shields.io/badge/LightGBM-02569B?style=flat-square)
-![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-
 **Mobile & bots**
-![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
+![Swift](https://img.shields.io/badge/SwiftUI-F05138?style=flat-square&logo=swift&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Jetpack_Compose-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Telegram](https://img.shields.io/badge/Telegram_Bot_API-26A5E4?style=flat-square&logo=telegram&logoColor=white)
+
+**Infra & tooling**
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=flat-square&logo=railway&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Claude Code](https://img.shields.io/badge/Claude_Code-191919?style=flat-square&logo=anthropic&logoColor=white)
 
 ---
 
 ## Now
 
-- 🛠 Building **Vita Lux** and the **OI BOI** platform
-- 📚 Studying — and treating every client project as the real curriculum
-- ✍️ Setting up a blog about shipping products as a student
+- 🚿 Getting **TazaCRM** through App Store review and onto its first car washes
+- 🏛 Building **QairuHub**: the community platform, the internal core platform and a schedule bot for QAIRU students
+- 🧠 Next thing to learn properly: fine-tuning open models for Kazakh, speech in particular
 
 ---
 
@@ -158,9 +195,3 @@ Two Mini App funnels sharing one backend, plus an iOS companion app and an admin
   <i>Open to collaborations and interesting problems.</i><br>
   <a href="mailto:kassymoff01@gmail.com">kassymoff01@gmail.com</a>
 </p>
-
-<!-- Add once ready:
-  LinkedIn: https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white
-  X:        https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white
-  Blog:     https://user1618phi.me
--->

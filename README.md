@@ -79,28 +79,6 @@ Kazakhstan distributes **139.3 bn ₸** of farm subsidies across **36,651 applic
 
 ---
 
-### 📿 [Asma: 99 Names](https://github.com/user1618phi/asma-99-ios-app) — iOS app for learning the 99 Names of Allah
-
-Free, offline-first, no account. Russian, English and Kazakh, interface and content. Shipped to the App Store in May 2026.
-
-Flashcards only prepare a name; it counts as learned once you retrieve it correctly under test. The engine is built on the testing effect, the spacing effect and Fogg's behavior model, and [every threshold is documented](https://github.com/user1618phi/asma-99-ios-app/blob/main/docs/learning-engine.md).
-
-- On-device speech recognition for pronunciation practice
-- Gamification that never punishes: soft currency and cooldowns instead of streak guilt
-- Optional CloudKit sync with no login
-
-![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white)
-![SwiftUI](https://img.shields.io/badge/SwiftUI-0071E3?style=flat-square&logo=swift&logoColor=white)
-![SwiftData](https://img.shields.io/badge/SwiftData-0071E3?style=flat-square)
-![CloudKit](https://img.shields.io/badge/CloudKit-1BADF8?style=flat-square&logo=icloud&logoColor=white)
-
----
-
-## Also public
-
-- 🛁 [**Vita Lux**](https://github.com/user1618phi/vita-lux) — e-commerce for a sanitary-ware manufacturer. pnpm monorepo, Drizzle, ru/kk localization with a linter for the nine Kazakh-only glyphs (ә ө ұ ү қ ң ғ һ і), so a translation can never silently degrade into Russian. CI on every push.
-- 🌱 [**Sarqyt**](https://github.com/user1618phi/sarqyt_web) — marketplace that rescues surplus food from restaurants. Next.js, kk/ru.
-
 ## Client work (code stays private)
 
 <table>
